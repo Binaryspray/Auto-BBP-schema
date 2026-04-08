@@ -1,1 +1,38 @@
-{}
+{
+  "project_id": "string",
+  "bbp": {
+    "platform": "hackerone",
+    "handle": "string",
+    "name": "string",
+    "score": 0.0
+  },
+  "scope": {
+    "identifier": "string",
+    "asset_type": "WILDCARD | URL",
+    "eligible_for_bounty": true,
+    "max_severity": "string",
+    "instruction": "string | null"
+  },
+  "target": {
+    "subdomain": "string",
+    "ip": "string | null",
+    "tech_stack": [],
+    "status_code": 0,
+    "title": "string | null"
+  },
+  "attack_points": [
+    {
+      "ap_id": "string",
+      "url": "string",
+      "method": "GET | POST | PUT | DELETE | PATCH",
+      "category": "string",
+      "priority": 0,
+      "evidence": {
+        "source": "gau | waybackurls | katana | linkfinder | llm_inference | nuclei",
+        "raw": "string",
+        "llm_reasoning": "string | null"
+      }
+    }
+  ],
+  "created_at": "string"
+}
