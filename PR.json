@@ -1,0 +1,20 @@
+{
+  "title": "",
+  "asset": "",
+  "weakness": { "cwe_id": "", "cwe_name": "" },
+  "severity": "",
+  "description": {
+    "summary": "",
+    "steps_to_reproduce": [],
+    "recommendations": [],
+    "references": []
+  },
+  "impact": "",
+  "attachments": [],
+  "chaining_analysis": {
+    "status": "suggested",
+    "related_reports": [],
+    "scenario": "",
+    "chained_severity": ""
+  }
+}
