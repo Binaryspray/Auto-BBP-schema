@@ -11,7 +11,10 @@
     "asset_type": "WILDCARD | URL",
     "eligible_for_bounty": true,
     "max_severity": "string",
-    "instruction": "string | null"
+    "instruction": "string | null",
+    "availability_requirement": "none | low | high | null",
+    "confidentiality_requirement": "none | low | high | null",
+    "integrity_requirement": "none | low | high | null"
   },
   "target": {
     "subdomain": "string",
@@ -25,12 +28,20 @@
       "ap_id": "string",
       "url": "string",
       "method": "GET | POST | PUT | DELETE | PATCH",
-      "category": "string",
+      "category": "subdomain_takeover | exposure | secret | idor_candidate | redirect_candidate | ssrf_candidate | injection_candidate | lfi_candidate | upload_candidate | routing_inference | tech_exposure | auth_endpoint",
       "priority": 0,
       "evidence": {
-        "source": "gau | waybackurls | katana | linkfinder | llm_inference | nuclei",
+        "source": "gau | waybackurls | katana | linkfinder | secretfinder | llm_inference | nuclei | bbot",
         "raw": "string",
         "llm_reasoning": "string | null"
+      },
+      "request_sample": {
+        "url": "string",
+        "method": "string",
+        "headers": {},
+        "params": {},
+        "response_status": 0,
+        "response_snippet": "string | null"
       }
     }
   ],
