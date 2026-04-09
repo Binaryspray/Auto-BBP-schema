@@ -1,5 +1,5 @@
 {
-  "project_id": "string",
+  "project_id": "string (format: {handle}_{YYYYMMDD})",
   "bbp": {
     "platform": "hackerone",
     "handle": "string",
@@ -10,7 +10,7 @@
     "identifier": "string",
     "asset_type": "WILDCARD | URL",
     "eligible_for_bounty": true,
-    "max_severity": "string",
+    "max_severity": "critical | high | medium | low | none | null",
     "instruction": "string | null",
     "availability_requirement": "none | low | high | null",
     "confidentiality_requirement": "none | low | high | null",
@@ -19,19 +19,19 @@
   "target": {
     "subdomain": "string",
     "ip": "string | null",
-    "tech_stack": [],
+    "tech_stack": ["string"],
     "status_code": 0,
     "title": "string | null"
   },
   "attack_points": [
     {
-      "ap_id": "string",
+      "ap_id": "string (format: ap_001)",
       "url": "string",
       "method": "GET | POST | PUT | DELETE | PATCH",
-      "category": "subdomain_takeover | exposure | secret | idor_candidate | redirect_candidate | ssrf_candidate | injection_candidate | lfi_candidate | upload_candidate | routing_inference | tech_exposure | auth_endpoint",
-      "priority": 0,
+      "category": "IDOR | auth_bypass | exposure | secret | injection | takeover | oauth_misconfig | jwt_attack | routing_inference | redirect_candidate | ssrf_candidate | lfi_candidate | upload_candidate | tech_exposure",
+      "priority": "1-5 (1=highest)",
       "evidence": {
-        "source": "gau | waybackurls | katana | linkfinder | secretfinder | llm_inference | nuclei | bbot",
+        "source": "gau | waybackurls | katana | linkfinder | nuclei | bbot | llm_inference",
         "raw": "string",
         "llm_reasoning": "string | null"
       },
@@ -45,5 +45,5 @@
       }
     }
   ],
-  "created_at": "string"
+  "created_at": "string (ISO 8601)"
 }

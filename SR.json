@@ -1,19 +1,57 @@
 {
-  "project_id": "",
-  "target": {
-    "subdomain": "",
-    "attack_point": ""
+  "project_id": "string (format: {handle}_{YYYYMMDD})",
+  "bbp": {
+    "platform": "hackerone",
+    "handle": "string",
+    "name": "string",
+    "score": 0.0
   },
+  "target": {
+    "subdomain": "string",
+    "ip": "string | null",
+    "tech_stack": ["string"],
+    "status_code": 0,
+    "title": "string | null"
+  },
+  "scope": {
+    "identifier": "string",
+    "asset_type": "WILDCARD | URL",
+    "eligible_for_bounty": true,
+    "max_severity": "critical | high | medium | low | none | null",
+    "instruction": "string | null"
+  },
+  "selected_attack_points": [
+    {
+      "ap_id": "string (format: ap_001)",
+      "url": "string",
+      "method": "GET | POST | PUT | DELETE | PATCH",
+      "category": "IDOR | auth_bypass | exposure | secret | injection | takeover | oauth_misconfig | jwt_attack | routing_inference | redirect_candidate | ssrf_candidate | lfi_candidate | upload_candidate | tech_exposure",
+      "priority": "1-5 (1=highest)",
+      "evidence": {
+        "source": "gau | waybackurls | katana | linkfinder | nuclei | bbot | llm_inference",
+        "raw": "string",
+        "llm_reasoning": "string | null"
+      },
+      "request_sample": {
+        "url": "string",
+        "method": "string",
+        "headers": {},
+        "params": {},
+        "response_status": 0,
+        "response_snippet": "string | null"
+      }
+    }
+  ],
   "vulnerability": {
-    "type": "",
-    "payload": "",
-    "test_result": "",
-    "reproduction_steps": []
+    "type": "string",
+    "payload": "string",
+    "test_result": "string",
+    "reproduction_steps": ["string"]
   },
   "program_info": {
     "platform": "hackerone",
-    "program_name": "",
-    "scope": [],
-    "report_template": null
+    "program_name": "string",
+    "scope": ["string"],
+    "report_template": "string | null"
   }
 }
